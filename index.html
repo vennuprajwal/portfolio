@@ -136,43 +136,63 @@
     .sec-name{font-family:var(--font-m); font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--muted)}
     .sec-rule{flex:1; height:1px; background:var(--line)}
 
-    .about-grid{display:grid; grid-template-columns:1.4fr 1fr; gap:5rem}
-    .about-text .lead{font-family:var(--font-d); font-weight:500; font-size:1.35rem; line-height:1.5; letter-spacing:-.01em; margin-bottom:2rem}
-    .about-text p{color:var(--muted); margin-bottom:1.4rem; max-width:58ch}
-    .about-text p b{color:var(--ink); font-weight:500}
-    .facts{border-top:1px solid var(--line)}
-    .fact{display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:1.1rem 0; border-bottom:1px solid var(--line)}
-    .fact dt{font-family:var(--font-m); font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--faint)}
-    .fact dd{text-align:right; font-size:.93rem}
-    .fact dd em{font-style:normal; color:var(--accent)}
+    .sec-title{font-family:var(--font-d); font-weight:600; font-size:clamp(2.5rem,6.8vw,4.8rem);
+      line-height:.98; letter-spacing:-.02em; text-transform:uppercase; margin:-2.6rem 0 3.6rem}
+    .sec-title em{font-style:normal; color:var(--accent)}
+
+    .about-narrative .lead{font-family:var(--font-d); font-weight:500; font-size:clamp(1.3rem,2.6vw,1.6rem);
+      line-height:1.45; letter-spacing:-.01em; margin-bottom:2.2rem; max-width:40ch}
+    .about-narrative .lead em{font-style:normal; color:var(--accent)}
+    .about-narrative p{color:var(--muted); margin-bottom:1.4rem; max-width:62ch}
+    .about-narrative p b{color:var(--ink); font-weight:500}
+    .btn-pill{display:inline-flex; align-items:center; gap:.55rem; margin-top:1rem;
+      font-family:var(--font-m); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+      border:1px solid var(--line); border-radius:999px; padding:.9rem 1.6rem; color:var(--ink);
+      transition:border-color .25s, color .25s, background .25s}
+    .btn-pill:hover{border-color:var(--accent); color:var(--accent); background:rgba(228,177,94,.06)}
+    .about-photo{width:min(235px,56vw); margin-top:3.2rem}
+    .about-photo img{width:100%; height:auto; border:1px solid var(--line); aspect-ratio:1/1; object-fit:cover; object-position:center 22%;
+      filter:grayscale(.15) contrast(1.04) brightness(.95)}
+    .about-photo figcaption{margin-top:.75rem; font-family:var(--font-m); font-size:.62rem;
+      letter-spacing:.16em; text-transform:uppercase; color:var(--faint)}
+
+    .about-stats{display:grid; grid-template-columns:repeat(5,1fr); gap:2rem;
+      border-top:1px solid var(--line); margin-top:4.6rem; padding-top:2.4rem}
+    .about-stats dt{font-family:var(--font-m); font-size:.62rem; letter-spacing:.2em; text-transform:uppercase;
+      color:var(--faint); margin-bottom:.6rem}
+    .about-stats dd{font-family:var(--font-d); font-weight:500; font-size:1.02rem; letter-spacing:-.01em; line-height:1.4}
+    .about-stats dd em{font-style:normal; color:var(--accent)}
 
     .project{position:relative; border-top:1px solid var(--line); padding:3.4rem 0 3rem; overflow:hidden}
     .project:last-of-type{border-bottom:1px solid var(--line)}
     .p-ghost{position:absolute; right:-1%; top:42%; transform:translateY(-50%); pointer-events:none; user-select:none;
       font-family:var(--font-m); font-weight:500; font-size:clamp(7rem,18vw,15rem); line-height:1;
       color:transparent; -webkit-text-stroke:1px rgba(242,240,234,.07); will-change:transform}
-    .p-head{display:flex; align-items:baseline; gap:1.4rem; flex-wrap:wrap; margin-bottom:1.3rem}
-    .p-num{font-family:var(--font-m); font-size:.75rem; color:var(--faint)}
-    .project h3{font-family:var(--font-d); font-weight:600; font-size:clamp(1.7rem,4vw,2.6rem); letter-spacing:-.02em;
-      flex:1; min-width:220px; transition:color .3s, transform .3s}
-    .project:hover h3{color:var(--accent); transform:translateX(8px)}
-    .p-badge{font-family:var(--font-m); font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent)}
-    .p-badge::before{content:"● "; font-size:.55rem}
-    .p-desc{color:var(--muted); max-width:62ch; margin-bottom:1.2rem}
+    .p-top{display:flex; align-items:baseline; gap:1.3rem; margin-bottom:1rem}
+    .p-idx{font-family:var(--font-d); font-weight:600; font-size:1.45rem; letter-spacing:-.01em}
+    .p-ctx{font-family:var(--font-m); font-size:.66rem; letter-spacing:.22em; text-transform:uppercase; color:var(--muted)}
+    .p-title{font-family:var(--font-d); font-weight:600; font-size:clamp(2.2rem,5.8vw,4.2rem); line-height:1.02;
+      letter-spacing:-.02em; text-transform:uppercase; margin-bottom:1.3rem; transition:color .3s, transform .3s}
+    .project:hover .p-title{color:var(--accent); transform:translateX(8px)}
+    .p-desc{color:var(--muted); max-width:62ch; margin-bottom:1.4rem; font-size:1.02rem}
     .p-points{display:grid; gap:.45rem; max-width:68ch; margin-bottom:1.7rem}
     .p-points li{position:relative; padding-left:1.5rem; color:var(--muted); font-size:.93rem; transition:color .25s}
     .project:hover .p-points li{color:var(--ink-soft)}
     .p-points li::before{content:"—"; position:absolute; left:0; color:var(--faint)}
     .p-points b{color:var(--ink); font-weight:500}
-    .p-meta{display:flex; justify-content:space-between; align-items:center; gap:1.5rem; flex-wrap:wrap}
-    .p-tags{font-family:var(--font-m); font-size:.72rem; color:var(--faint)}
-    .p-links{display:flex; gap:1.8rem}
+    .pills{display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:2rem}
+    .pill{font-family:var(--font-m); font-size:.68rem; letter-spacing:.05em; color:var(--muted);
+      border:1px solid var(--line); border-radius:999px; padding:.45em 1.1em; transition:color .25s, border-color .25s}
+    .project:hover .pill{color:var(--ink-soft); border-color:rgba(242,240,234,.22)}
+    .p-meta{display:flex; gap:2.2rem; flex-wrap:wrap; align-items:center}
 
-    .stack-grid{display:grid; grid-template-columns:1fr 1fr; column-gap:4rem}
-    .stack-item{border-top:1px solid var(--line); padding:1.5rem 0 1.7rem; transition:padding-left .3s}
-    .stack-item:hover{padding-left:.8rem}
-    .stack-item dt{font-family:var(--font-m); font-size:.66rem; letter-spacing:.22em; text-transform:uppercase; color:var(--faint); margin-bottom:.5rem}
-    .stack-item dd{font-size:.95rem}
+    .skills-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:3.2rem 2.5rem}
+    .sk{transition:transform .3s}
+    .sk:hover{transform:translateY(-4px)}
+    .sk dt{font-family:var(--font-m); font-size:.66rem; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin-bottom:.9rem}
+    .sk dd{color:var(--muted); font-size:.95rem; line-height:1.75}
+
+    .edu-row + .edu-row{border-top:none}
     .award{display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap;
       border-top:1px solid var(--line); padding:1.5rem 0; transition:padding-left .3s}
     .award:last-of-type{border-bottom:1px solid var(--line)}
@@ -213,6 +233,15 @@
       font-size:.85rem; opacity:0; pointer-events:none; transition:opacity .3s, transform .3s; max-width:90vw}
     .toast.show{opacity:1; transform:translate(-50%,0)}
 
+    html.custom-cursor, html.custom-cursor *{cursor:none}
+    .cursor-dot{position:fixed; left:0; top:0; z-index:400; width:6px; height:6px; border-radius:50%;
+      background:var(--accent); pointer-events:none; opacity:0; transition:opacity .3s; will-change:transform}
+    .cursor-ring{position:fixed; left:0; top:0; z-index:400; width:34px; height:34px; border-radius:50%;
+      border:1px solid rgba(228,177,94,.55); pointer-events:none; opacity:0;
+      transition:width .25s, height .25s, border-color .25s, background .25s, opacity .3s; will-change:transform}
+    .cursor-ring.hover{width:56px; height:56px; background:rgba(228,177,94,.07); border-color:var(--accent)}
+    .cursor-ring.down{width:22px; height:22px}
+
     html.reveal-on [data-reveal]{opacity:0; transform:translateY(26px);
       transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)}
     html.reveal-on [data-reveal].in{opacity:1; transform:none}
@@ -222,8 +251,8 @@
       .mega{font-size:clamp(3rem,7.4vw,7rem)}
     }
     @media (max-width:860px){
-      .about-grid{grid-template-columns:1fr; gap:3rem}
-      .stack-grid{grid-template-columns:1fr}
+      .about-stats{grid-template-columns:repeat(2,1fr); gap:1.8rem 2rem}
+      .skills-grid{grid-template-columns:1fr 1fr; gap:2.4rem 1.8rem}
     }
     @media (max-width:720px){
       .nav-links{display:none}
@@ -240,6 +269,9 @@
       .mission{padding:26vh 0 24vh}
       .p-ghost{font-size:6.5rem; top:36%}
       .p-meta{flex-direction:column; align-items:flex-start; gap:1rem}
+      .sec-title{margin:-1rem 0 2.6rem}
+      .about-stats{grid-template-columns:1fr 1fr; gap:1.5rem 1.2rem; padding-top:1.8rem}
+      .about-stats dd{font-size:.92rem}
     }
     @media (max-width:720px) and (max-height:700px){
       .portrait{width:min(200px,52vw)}
@@ -277,7 +309,8 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#work">Work</a>
         <a href="#about">About</a>
-        <a href="#stack">Stack</a>
+        <a href="#stack">Skills</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
         <a href="#contact">Contact</a>
       </nav>
       <a href="mailto:vennuprajwal@gmail.com" class="nav-cta">Let's talk ↗</a>
@@ -308,6 +341,7 @@
           </p>
           <div class="hero-links" id="heroLinks">
             <a class="u" href="mailto:vennuprajwal@gmail.com">Email</a>
+            <a class="u" href="resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
             <a class="u" href="https://github.com/vennuprajwal" target="_blank" rel="noopener">GitHub ↗</a>
             <a class="u" href="https://linkedin.com/in/vennu-prajwal-a84330285" target="_blank" rel="noopener">LinkedIn ↗</a>
           </div>
@@ -338,47 +372,83 @@
         <header class="sec-head" data-reveal>
           <span class="sec-idx">01</span><span class="sec-name">About</span><span class="sec-rule"></span>
         </header>
+        <h2 class="sec-title" data-reveal>About</h2>
 
-        <div class="about-grid">
-          <div class="about-text" data-reveal>
-            <p class="lead">I learn by shipping — for the people technology tends to forget.</p>
-            <p>
-              I'm a Computer Science student at <b>NxtWave Institute of Advanced Technologies</b>
-              and a full-stack developer who has built <b>AI-enabled, voice/chat and web applications</b>
-              through hackathons and independent builds — from a trilingual digital ledger for
-              Kirana store owners to a six-agent career navigator powered by live LLM calls.
-            </p>
-            <p>
-              My toolkit spans <b>React, Next.js, Python and C++</b>, with hands-on work in
-              <b>RAG workflows, APIs and modern frontend tooling</b> — and a growing focus on
-              <b>cybersecurity</b>, because tools built for vulnerable communities must also protect them.
-            </p>
-          </div>
+        <div class="about-narrative" data-reveal>
+          <p class="lead">I learn by shipping — for the people <em>technology tends to forget</em>.</p>
+          <p>
+            I'm a Computer Science student at <b>NxtWave Institute of Advanced Technologies</b> and a
+            full-stack developer who builds <b>AI-enabled, voice-first products</b> through hackathons
+            and independent builds. I pick projects where the payoff is real — a finalist trophy,
+            a client invoice, a repo that teaches me something I'll reuse.
+          </p>
+          <p>
+            Hackathons are my proving ground: <b>TakeOver'26 finalist, HackWithHyderabad 3.0, MRDU,
+            IIT Hyderabad and Adobe University</b>. I can scope a build in 48 hours and still hand
+            over something solid — that's how <b>CyberMem</b>, my AI incident-response agent, was born.
+          </p>
+          <p>
+            The work I care most about serves <b>the last mile</b>: trilingual, voice-first tools for
+            kirana owners, students and everyday citizens. And <b>cybersecurity</b>, because tools
+            built for vulnerable communities must also protect them.
+          </p>
+          <p>
+            It works for the people around me too. Teammates and clients like someone who delivers —
+            being useful to them is how my curiosity pays off.
+          </p>
 
-          <dl class="facts" data-reveal style="transition-delay:.12s">
-            <div class="fact"><dt>Based in</dt><dd>Hyderabad, India</dd></div>
-            <div class="fact"><dt>Studying</dt><dd>BTech CSE — 2nd Year</dd></div>
-            <div class="fact"><dt>CGPA</dt><dd><em>8.2</em> / 10</dd></div>
-            <div class="fact"><dt>Exploring</dt><dd>Cybersecurity &amp; network defense</dd></div>
-            <div class="fact"><dt>Status</dt><dd><em>Open to work</em></dd></div>
-          </dl>
+          <a class="btn-pill" href="resume.pdf" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span></a>
+
+          <figure class="about-photo">
+            <img id="aboutPhoto" alt="Vennu Prajwal" width="470" height="470" />
+            <figcaption>↳ vennu prajwal · hyderabad, in</figcaption>
+          </figure>
         </div>
+
+        <dl class="about-stats" data-reveal>
+          <div class="stat"><dt>Based in</dt><dd>Hyderabad, IN</dd></div>
+          <div class="stat"><dt>Studying</dt><dd>BTech CSE — 2nd Year</dd></div>
+          <div class="stat"><dt>CGPA</dt><dd><em>8.2</em> / 10</dd></div>
+          <div class="stat"><dt>Exploring</dt><dd>Agentic AI &amp; cybersecurity</dd></div>
+          <div class="stat"><dt>Status</dt><dd><em>Open to internships</em></dd></div>
+        </dl>
       </div>
     </section>
 
     <section class="section" id="work">
       <div class="container">
-        <header class="sec-head" data-reveal>
-          <span class="sec-idx">02</span><span class="sec-name">Selected Work</span><span class="sec-rule"></span>
-        </header>
-
         <article class="project" data-reveal>
           <span class="p-ghost" aria-hidden="true" data-parallax="-0.06">01</span>
-          <div class="p-head">
-            <span class="p-num">001</span>
-            <h3>Dukaan Saathi</h3>
-            <span class="p-badge">TakeOver'26 — Finalist</span>
+          <div class="p-top">
+            <span class="p-idx">01</span>
+            <span class="p-ctx">HackWithHyderabad 3.0</span>
           </div>
+          <h3 class="p-title">CyberMem</h3>
+          <p class="p-desc">
+            AI incident-response agent with long-term memory — it remembers how your organization
+            solved past security incidents, and gets sharper with every one it handles.
+          </p>
+          <ul class="p-points">
+            <li><b>Learning loop</b> — Groq LLM reasoning coupled with Hindsight long-term memory: every incident recalls “what worked vs what failed” before recommending a response.</li>
+            <li><b>Human-in-the-loop</b> — the agent proposes the response plan; a human analyst approves before any simulated containment executes.</li>
+            <li><b>Full SOC suite</b> — dashboard, guided demo flow, post-mortem synthesis and a memory explorer with live learning-curve metrics.</li>
+          </ul>
+          <div class="pills">
+            <span class="pill">Next.js 14</span><span class="pill">TypeScript</span><span class="pill">Groq API</span><span class="pill">Long-Term Memory</span><span class="pill">Tailwind CSS</span>
+          </div>
+          <div class="p-meta">
+            <a class="link-btn u" href="https://cybermem-xi.vercel.app" target="_blank" rel="noopener">Live demo ↗</a>
+            <a class="link-btn u" href="https://github.com/vennuprajwal/-CYBERMEM" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project" data-reveal>
+          <span class="p-ghost" aria-hidden="true" data-parallax="0.09">02</span>
+          <div class="p-top">
+            <span class="p-idx">02</span>
+            <span class="p-ctx">TakeOver'26 — Finalist</span>
+          </div>
+          <h3 class="p-title">Dukaan Saathi</h3>
           <p class="p-desc">
             A WhatsApp- and voice-based digital ledger for small Kirana store owners —
             bookkeeping in their own language, on the app they already use.
@@ -389,22 +459,48 @@
             <li><b>Working prototype</b> — voice recognition, live chat parsing, simulated OCR, live ledger dashboard.</li>
             <li><b>Extended backend schema</b> — owner profiles (name, email, GST, logo) with migration logic &amp; validation; roadmap: Udhaar ledger, Razorpay, reporting.</li>
           </ul>
+          <div class="pills">
+            <span class="pill">React</span><span class="pill">Voice Recognition</span><span class="pill">Chat Parsing</span><span class="pill">OCR</span><span class="pill">Express</span><span class="pill">SQLite</span>
+          </div>
           <div class="p-meta">
-            <span class="p-tags">React · Voice Recognition · Chat Parsing · OCR · Express · SQLite</span>
-            <span class="p-links">
-              <button type="button" class="link-btn u demo-soon">Live demo ↗</button>
-              <a class="link-btn u" href="https://github.com/vennuprajwal" target="_blank" rel="noopener">GitHub ↗</a>
-            </span>
+            <a class="link-btn u" href="https://dukaan-saathi-azure.vercel.app" target="_blank" rel="noopener">Live demo ↗</a>
+            <a class="link-btn u" href="https://github.com/vennuprajwal/Dukaan-Saathi" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </article>
 
         <article class="project" data-reveal>
-          <span class="p-ghost" aria-hidden="true" data-parallax="0.09">02</span>
-          <div class="p-head">
-            <span class="p-num">002</span>
-            <h3>Disha AI</h3>
-            <span class="p-badge">Live LLM pipeline</span>
+          <span class="p-ghost" aria-hidden="true" data-parallax="-0.08">03</span>
+          <div class="p-top">
+            <span class="p-idx">03</span>
+            <span class="p-ctx">Hackathon Build</span>
           </div>
+          <h3 class="p-title">Ganesh Run</h3>
+          <p class="p-desc">
+            3D endless-runner web game — Lord Ganesha and his mouse companion Mooshak
+            sprinting down an endless temple bridge, chasing blessings.
+          </p>
+          <ul class="p-points">
+            <li><b>Procedural 3D characters</b> — kinematic Bal Ganesha with a sine-wave cape flutter, plus a scouting Mooshak companion with its own running AI.</li>
+            <li><b>Endless temple world</b> — pooled three-lane bridge segments, jump/slide/lane obstacles, modak &amp; coin collectibles, particle systems and a golden-hour sky.</li>
+            <li><b>100% offline audio</b> — temple bells, coin sparkles and a tanpura drone synthesized live with the Web Audio API. Zero CDNs, zero backend.</li>
+            <li><b>Plays anywhere</b> — keyboard, swipe and on-screen touch controls, fully responsive and offline-ready.</li>
+          </ul>
+          <div class="pills">
+            <span class="pill">Three.js</span><span class="pill">Vite</span><span class="pill">Web Audio API</span><span class="pill">JavaScript</span>
+          </div>
+          <div class="p-meta">
+            <a class="link-btn u" href="https://ganeshrun.vercel.app" target="_blank" rel="noopener">Live demo ↗</a>
+            <a class="link-btn u" href="https://github.com/vennuprajwal/GANESH__RUN" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project" data-reveal>
+          <span class="p-ghost" aria-hidden="true" data-parallax="0.06">04</span>
+          <div class="p-top">
+            <span class="p-idx">04</span>
+            <span class="p-ctx">Independent Build</span>
+          </div>
+          <h3 class="p-title">Disha AI</h3>
           <p class="p-desc">
             Six specialized AI agents that turn one student's profile into a real,
             actionable education-and-career roadmap.
@@ -414,22 +510,21 @@
             <li><b>Grounded RAG search</b> across education and scholarship data — every answer tied to retrieved context.</li>
             <li><b>Shipped as a single-file HTML artifact</b> running live Anthropic API calls — zero backend, fully portable.</li>
           </ul>
+          <div class="pills">
+            <span class="pill">Anthropic API</span><span class="pill">RAG</span><span class="pill">Multi-Agent Systems</span><span class="pill">Prompt Engineering</span>
+          </div>
           <div class="p-meta">
-            <span class="p-tags">Anthropic API · RAG · Multi-Agent Systems · Prompt Engineering · JavaScript</span>
-            <span class="p-links">
-              <button type="button" class="link-btn u demo-soon">Live demo ↗</button>
-              <a class="link-btn u" href="https://github.com/vennuprajwal" target="_blank" rel="noopener">GitHub ↗</a>
-            </span>
+            <a class="link-btn u" href="https://github.com/vennuprajwal" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </article>
 
         <article class="project" data-reveal>
-          <span class="p-ghost" aria-hidden="true" data-parallax="-0.08">03</span>
-          <div class="p-head">
-            <span class="p-num">003</span>
-            <h3>SA Palm Meadows</h3>
-            <span class="p-badge">Client build</span>
+          <span class="p-ghost" aria-hidden="true" data-parallax="-0.09">05</span>
+          <div class="p-top">
+            <span class="p-idx">05</span>
+            <span class="p-ctx">Client Build</span>
           </div>
+          <h3 class="p-title">SA Palm Meadows</h3>
           <p class="p-desc">
             Luxury real-estate site for a premium eco-friendly gated villa community in
             Hyderabad — an 18-section experience that sells the lifestyle before the site visit.
@@ -439,12 +534,57 @@
             <li><b>Google Maps integration</b> so prospects find the community in one tap.</li>
             <li><b>Framer Motion throughout</b> — heavy motion, smooth performance, deploy-ready on Vercel.</li>
           </ul>
+          <div class="pills">
+            <span class="pill">Next.js</span><span class="pill">Framer Motion</span><span class="pill">Tailwind CSS</span><span class="pill">Google Maps API</span>
+          </div>
           <div class="p-meta">
-            <span class="p-tags">Next.js · Framer Motion · Tailwind CSS · Google Maps API · Vercel</span>
-            <span class="p-links">
-              <button type="button" class="link-btn u demo-soon">Live demo ↗</button>
-              <a class="link-btn u" href="https://github.com/vennuprajwal" target="_blank" rel="noopener">GitHub ↗</a>
-            </span>
+            <a class="link-btn u" href="https://github.com/vennuprajwal" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project" data-reveal>
+          <span class="p-ghost" aria-hidden="true" data-parallax="0.07">06</span>
+          <div class="p-top">
+            <span class="p-idx">06</span>
+            <span class="p-ctx">Android · Kotlin</span>
+          </div>
+          <h3 class="p-title">WaveMic</h3>
+          <p class="p-desc">
+            Native Android build in Kotlin — my ground-floor dive into the Android
+            toolchain, end to end.
+          </p>
+          <ul class="p-points">
+            <li><b>Kotlin-first</b> — built with Gradle Kotlin DSL and a clean app-module project structure.</li>
+            <li><b>Learning by shipping</b> — the same way I learned web: build it first, read the docs on the way.</li>
+          </ul>
+          <div class="pills">
+            <span class="pill">Kotlin</span><span class="pill">Android</span><span class="pill">Gradle KTS</span>
+          </div>
+          <div class="p-meta">
+            <a class="link-btn u" href="https://github.com/vennuprajwal/WaveMic" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project" data-reveal>
+          <span class="p-ghost" aria-hidden="true" data-parallax="-0.06">07</span>
+          <div class="p-top">
+            <span class="p-idx">07</span>
+            <span class="p-ctx">Open-Source Collab</span>
+          </div>
+          <h3 class="p-title">VaaniAI+</h3>
+          <p class="p-desc">
+            Real-time voice assistant with context awareness — conversations that
+            remember what was already said.
+          </p>
+          <ul class="p-points">
+            <li><b>Context-aware voice</b> — continuous, natural conversation powered by Murf AI.</li>
+            <li><b>Team collab</b> — contributed alongside a teammate on the VaaniAI voice stack.</li>
+          </ul>
+          <div class="pills">
+            <span class="pill">Murf AI</span><span class="pill">Voice</span><span class="pill">HTML</span>
+          </div>
+          <div class="p-meta">
+            <a class="link-btn u" href="https://github.com/vennuprajwal/vaaniai-plus" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </article>
       </div>
@@ -453,16 +593,17 @@
     <section class="section" id="stack">
       <div class="container">
         <header class="sec-head" data-reveal>
-          <span class="sec-idx">03</span><span class="sec-name">Stack</span><span class="sec-rule"></span>
+          <span class="sec-idx">03</span><span class="sec-name">Skills</span><span class="sec-rule"></span>
         </header>
+        <h2 class="sec-title" data-reveal>Skills</h2>
 
-        <dl class="stack-grid">
-          <div class="stack-item" data-reveal><dt>Languages</dt><dd>Python · C++ · JavaScript · HTML · CSS</dd></div>
-          <div class="stack-item" data-reveal style="transition-delay:.06s"><dt>Frontend &amp; Web</dt><dd>React · Next.js · Vite · Tailwind CSS · Express · Framer Motion</dd></div>
-          <div class="stack-item" data-reveal style="transition-delay:.12s"><dt>AI &amp; APIs</dt><dd>RAG · Anthropic API · Voice Recognition · OCR Workflows</dd></div>
-          <div class="stack-item" data-reveal style="transition-delay:.18s"><dt>Cybersecurity</dt><dd>Network Security · Vulnerability Assessment · Security Fundamentals</dd></div>
-          <div class="stack-item" data-reveal style="transition-delay:.24s"><dt>Data &amp; Deployment</dt><dd>SQLite · Turso · Vercel</dd></div>
-          <div class="stack-item" data-reveal style="transition-delay:.3s"><dt>Tools</dt><dd>Git · GitHub</dd></div>
+        <dl class="skills-grid">
+          <div class="sk" data-reveal><dt>Languages</dt><dd>Python, C++, JavaScript, TypeScript, HTML, CSS</dd></div>
+          <div class="sk" data-reveal style="transition-delay:.06s"><dt>AI / ML</dt><dd>RAG, Multi-Agent Systems, Prompt Engineering, Voice AI, LLM Apps</dd></div>
+          <div class="sk" data-reveal style="transition-delay:.12s"><dt>Web / Tools</dt><dd>React, Next.js, Vite, Three.js, Tailwind CSS, Express, Framer Motion, Git/GitHub, Vercel</dd></div>
+          <div class="sk" data-reveal style="transition-delay:.18s"><dt>Data</dt><dd>SQLite, Turso, OCR Workflows</dd></div>
+          <div class="sk" data-reveal style="transition-delay:.24s"><dt>Mobile</dt><dd>Kotlin, Android (Gradle KTS)</dd></div>
+          <div class="sk" data-reveal style="transition-delay:.3s"><dt>Working Style</dt><dd>Communication, Team coordination, Rapid prototyping, Shipping under deadline</dd></div>
         </dl>
       </div>
     </section>
@@ -472,20 +613,33 @@
         <header class="sec-head" data-reveal>
           <span class="sec-idx">04</span><span class="sec-name">Recognition</span><span class="sec-rule"></span>
         </header>
+        <h2 class="sec-title" data-reveal>Recognition</h2>
 
         <div class="award featured" data-reveal>
-          <h3>TakeOver Hackathon</h3>
-          <span class="award-role">Finalist</span>
+          <h3>TakeOver Hackathon '26</h3>
+          <span class="award-role">Finalist — Dukaan Saathi</span>
         </div>
         <div class="award" data-reveal style="transition-delay:.06s">
+          <h3>HackWithHyderabad 3.0</h3>
+          <span class="award-role">Participant — CyberMem</span>
+        </div>
+        <div class="award" data-reveal style="transition-delay:.12s">
+          <h3>National AI/ML Hackathon by AVEVA</h3>
+          <span class="award-role">Participant — Round 1 Presentation</span>
+        </div>
+        <div class="award" data-reveal style="transition-delay:.18s">
           <h3>MRDU Hackathon</h3>
           <span class="award-role">National-Level Participant</span>
         </div>
-        <div class="award" data-reveal style="transition-delay:.12s">
+        <div class="award" data-reveal style="transition-delay:.24s">
           <h3>Adobe University Hackathon</h3>
-          <span class="award-role">Participant</span>
+          <span class="award-role">Participant — Round 1 Assessment</span>
         </div>
-        <div class="award" data-reveal style="transition-delay:.18s">
+        <div class="award" data-reveal style="transition-delay:.3s">
+          <h3>Google Gemini QuizOff 2026</h3>
+          <span class="award-role">CampusCrew — Participant</span>
+        </div>
+        <div class="award" data-reveal style="transition-delay:.36s">
           <h3>IIT Hyderabad Hackathon</h3>
           <span class="award-role">Participant</span>
         </div>
@@ -497,6 +651,7 @@
         <header class="sec-head" data-reveal>
           <span class="sec-idx">05</span><span class="sec-name">Education</span><span class="sec-rule"></span>
         </header>
+        <h2 class="sec-title" data-reveal>Education</h2>
 
         <div class="edu-row" data-reveal>
           <div>
@@ -504,6 +659,13 @@
             <p class="edu-inst">NxtWave Institute of Advanced Technologies · Hyderabad</p>
           </div>
           <span class="edu-cgpa">CGPA <b>8.2</b> / 10</span>
+        </div>
+        <div class="edu-row" data-reveal style="transition-delay:.08s">
+          <div>
+            <h3>Intermediate</h3>
+            <p class="edu-inst">Sri Vasishta Junior College</p>
+          </div>
+          <span class="edu-cgpa"><b>89</b>%</span>
         </div>
       </div>
     </section>
@@ -515,6 +677,7 @@
         <div class="contact-row">
           <a class="u" href="https://github.com/vennuprajwal" target="_blank" rel="noopener">GitHub ↗</a>
           <a class="u" href="https://linkedin.com/in/vennu-prajwal-a84330285" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="u" href="resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
           <a class="u" href="tel:+919849225051">+91 98492 25051</a>
         </div>
       </div>
@@ -548,6 +711,8 @@
     (function photoSetup() {
       var hero = $('heroPhoto'), bg = $('photoImg');
       if (hero && bg) { bg.src = hero.src; }
+      var about = $('aboutPhoto');
+      if (hero && about) { about.src = hero.src; }
     })();
 
     var reduce = false;
@@ -608,6 +773,35 @@
         a.addEventListener('pointerleave', function () { a.style.transform = ''; });
       });
     }
+
+    /* Custom cursor — dot + trailing ring replace the native arrow on fine pointers. */
+    (function customCursor() {
+      if (!finePointer || reduce) return;
+      var dot = doc.createElement('div'), ring = doc.createElement('div');
+      dot.className = 'cursor-dot'; ring.className = 'cursor-ring';
+      doc.body.appendChild(dot); doc.body.appendChild(ring);
+      doc.documentElement.classList.add('custom-cursor');
+      var x = -100, y = -100, rx = -100, ry = -100, shown = false;
+      doc.addEventListener('mousemove', function (ev) {
+        x = ev.clientX; y = ev.clientY;
+        if (!shown) { shown = true; dot.style.opacity = '1'; ring.style.opacity = '1'; }
+      }, { passive: true });
+      doc.addEventListener('mouseleave', function () {
+        shown = false; dot.style.opacity = '0'; ring.style.opacity = '0';
+      });
+      doc.addEventListener('mouseover', function (ev) {
+        var t = ev.target;
+        ring.classList.toggle('hover', !!(t && t.closest && t.closest('a, button, .pill')));
+      });
+      doc.addEventListener('mousedown', function () { ring.classList.add('down'); });
+      doc.addEventListener('mouseup', function () { ring.classList.remove('down'); });
+      (function loop() {
+        rx += (x - rx) * 0.16; ry += (y - ry) * 0.16;
+        dot.style.transform = 'translate(' + x + 'px,' + y + 'px) translate(-50%,-50%)';
+        ring.style.transform = 'translate(' + rx.toFixed(1) + 'px,' + ry.toFixed(1) + 'px) translate(-50%,-50%)';
+        requestAnimationFrame(loop);
+      })();
+    })();
 
     var ghosts = all('[data-parallax]');
 
