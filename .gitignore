@@ -1,0 +1,9 @@
+# Local archives / backups
+*.zip
+
+# Editor & workspace config
+.freebuff/
+
+# OS files
+Thumbs.db
+.DS_Store
